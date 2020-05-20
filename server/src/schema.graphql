@@ -12,4 +12,6 @@ type Query {
 
 type Mutation {
     createItem(question: String!, answers: [String!]!, correctAnswerId: Int!): Item
+    deleteItem(id: ID!): Item
+    updateItem(id: ID!, question: String!, answers: [String!]!, correctAnswerId: Int!): Item
 }

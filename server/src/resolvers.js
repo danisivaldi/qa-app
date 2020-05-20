@@ -1,15 +1,14 @@
-const itens = [
-    { id: 1, question: 'qual meu nome?', answers: ['daniel', 'bulu', 'fifa'], correctAnswerId: 1 },
-    { id: 2, question: 'qual o nome dela?', answers: ['mafe', 'fe', 'bolinha'], correctAnswerId: 2 }
-]
+const Item = require('./Item');
 
 module.exports = {
     Query: {
-        itens: () => itens,
-        item: () => itens[0],
+        itens: () => Item.find(),
+        item: (_, { id }) => Item.findById(id),
     },
 
     Mutation: {
-        createItem: () => itens[0],
+        createItem: (_, { question, answers, correctAnswerId }) => Item.create({ question, answers, correctAnswerId }),
+        deleteItem: (_, { id }) => Item.findByIdAndRemove(id),
+        updateItem: (_, { id, question, answers, correctAnswerId }) => Item.findByIdAndUpdate( id, { question, answers, correctAnswerId })
     },
 };
