@@ -1,0 +1,15 @@
+type Item {
+   id: ID!
+   question: String!
+   answers: [String!]!
+   correctAnswerId: Int!
+}
+
+type Query {
+    itens: [Item!]!
+    item(id: ID): Item
+}
+
+type Mutation {
+    createItem(question: String!, answers: [String!]!, correctAnswerId: Int!): Item
+}
