@@ -1,35 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql, QueryRenderer } from 'react-relay';
-import ItensList from './components/ItensList';
 import environment from './Environment';
 
+import ItensList from './components/ItensList/index';
+import Header from './components/Header';
+
 const query = graphql`
-  query itens {
+  query AppQuery {
     itens {
       id
-      questions
+      question
       answers
       correctAnswerId
     }
   }
 `;
 
-const Container = () => (
-  <QueryRenderer
-    environment={environment}
-    query={query}
-    variables={{}}
-    render={({ error, props }) => {
-      if (error) {
-        return <div>Error! {JSON.stringify(error)}</div>;
-      }
-      if (!props) {
-        return <div>Loading...</div>;
-      }
-      const { itens } = props;
-      return <ItensList itens={itens} />;
-    }}
-  />
-);
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <QueryRenderer
+          environment={environment}
+          query={query}
+          variables={{}}
+          render={({ error, props }) => {
+            if (error) {
+              return <div>Error! {JSON.stringify(error)}</div>;
+            }
+            if (!props) {
+              return <div>Loading...</div>;
+            }
+            const { itens } = props;
+            return <ItensList itens={itens} />;
+          }}
+        />
+      </div>
+    );
+  }
+}
 
-export default Container;
+export default App;

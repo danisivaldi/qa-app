@@ -1,0 +1,22 @@
+.qa-box {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answer {
+    margin-bottom: 5px;
+}
+
+.correct-answer {
+    margin-bottom: 5px
+}
+
+.correct-answer:hover {
+    color: #d33c5b;
+}

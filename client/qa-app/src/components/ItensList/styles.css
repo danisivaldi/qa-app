@@ -1,0 +1,16 @@
+.itens-list {
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.create-item {
+    margin: 10px 40px;
+    font-size: 20px;
+    color: #d33c5b;
+    border: none;
+    background-color: #fafafa;
+}
+
+.create-item:hover {
+    opacity: 70%;
+}

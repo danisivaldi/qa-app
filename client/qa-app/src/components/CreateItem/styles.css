@@ -1,0 +1,52 @@
+.form-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 40px
+}
+
+.input-question {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px 40px;
+    border: none;
+    background-color: #fafafa;
+}
+
+.input {
+    font-size: 15px;
+    margin: 10px 40px;
+    border: none;
+    background-color: #fafafa;
+}
+
+.answer-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.answer-alter {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 40px;
+    color: #d33c5b;
+    border: none;
+    background-color: #fafafa;
+}
+
+.answer-alter:hover {
+    opacity: 70%;
+}
+
+.submit {
+    font-size: 15px;
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 40px;
+    color: #d33c5b;
+    border: none;
+    background-color: #fafafa;
+}
+
+.submit:hover {
+    opacity: 70%;
+}
