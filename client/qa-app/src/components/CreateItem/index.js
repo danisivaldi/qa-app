@@ -6,7 +6,7 @@ class CreateItem extends Component {
   state = {
     question: '',
     answers: [''],
-    correctAnswerId: 0
+    correctAnswerId: ''
   }
 
   addAnswer  = (prevState) => {
@@ -20,7 +20,7 @@ class CreateItem extends Component {
     this.setState({ answers: this.state.answers })
   }
 
-  handleAnswerChange = e => index => {
+  handleAnswerChange = (e, index) => {
     let answers = [...this.state.answers]
     answers[index] = e.target.value
     this.setState({ answers })
@@ -49,7 +49,7 @@ class CreateItem extends Component {
               type="number" 
               placeholder="Resposta correta"
               value={this.state.correctAnswerId}
-              onChange={(e) => this.setState({ correctAnswerId: e.target.value })}
+              onChange={(e) => this.setState({ correctAnswerId: parseInt(e.target.value) })}
             /> 
             {this.state.answers.map((ans, index) => (
                 <div className='answer-box'key={index}>
@@ -63,14 +63,14 @@ class CreateItem extends Component {
                     className='answer-alter'
                     onClick={() => this.removeAnswer(index)}
                   >
-                    Remover
+                    REMOVER
                   </button>
                 </div>
             ))}
-            <button className='answer-alter'onClick={(e) => this.addAnswer(e)}>Adicionar Resposta</button>
+            <button className='answer-alter'onClick={(e) => this.addAnswer(e)}>ADICIONAR RESPOSTA</button>
           </div>
           <div>
-            <button className='submit'onClick={() => this.createItem()}>Salvar</button>
+            <button className='submit'onClick={() => this.createItem()}>SALVAR</button>
           </div>
         </div>
       </>

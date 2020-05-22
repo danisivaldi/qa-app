@@ -1,3 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .qa-box {
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
@@ -19,4 +26,19 @@
 
 .correct-answer:hover {
     color: #d33c5b;
+}
+
+.options-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.options {
+    font-size: 13px;
+    opacity: 80%;
+    margin: 10px;
+}
+
+.options:hover {
+    opacity: 60%;
 }

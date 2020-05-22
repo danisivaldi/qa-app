@@ -15,7 +15,7 @@ class ItensList extends Component {
   render() {
     return (
         <div>
-            <button className='create-item' onClick={this.onCreateItem}>+ Nova</button>
+            <button className='create-item' onClick={this.onCreateItem}>+ NOVA</button>
             {this.state.showCreateItem && <CreateItem add={this.onCreateItem}/>}
             <div className='itens-list'>{this.props.itens.map(item => <Item item={item} key={item.id} />)}</div>
         </div>
