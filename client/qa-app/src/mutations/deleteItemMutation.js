@@ -19,12 +19,6 @@ export default (id, callback) => {
     {
       mutation,
       variables,
-      updater: (store) => {
-        const payload = store.getRootField('createItem');
-        const id = payload.getValue('id');
-
-        store.delete(id)
-      },
       onCompleted: () => {
         callback()
       },

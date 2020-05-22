@@ -7,6 +7,7 @@ class Item extends Component {
   deleteItem = () => {
     const { id } = this.props.item
     DeleteItemMutation(id, () => console.log(`Mutation completed`))
+    window.location.reload(false);
   }
 
   render() {

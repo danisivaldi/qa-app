@@ -15,7 +15,15 @@
     border-left: none;
     border-right: none;
     padding-bottom: 3px;
+    width: 40%;
     background-color: #fafafa;
+}
+
+.answer-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-start;
 }
 
 .input {
@@ -25,20 +33,17 @@
     border-left: none;
     border-right: none;
     padding-bottom: 3px;
+    width: 40%;
     background-color: #fafafa;
 }
 
-.answer-box {
-    display: flex;
-    flex-direction: row;
-}
 
 .answer-alter {
     font-size: 10px;
     display: flex;
     align-items: flex-start;
     margin: 10px 40px;
-    color: #d33c5b;
+    color: #e76238;
     border: none;
     background-color: #fafafa;
 }
@@ -52,7 +57,7 @@
     display: flex;
     align-items: flex-start;
     margin: 10px 40px;
-    color: #d33c5b;
+    color: #e76238;
     border: none;
     background-color: #fafafa;
 }

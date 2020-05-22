@@ -6,12 +6,14 @@ class CreateItem extends Component {
   state = {
     question: '',
     answers: [''],
-    correctAnswerId: ''
+    correctAnswerId: '',
+    checked: [false]
   }
 
   addAnswer  = (prevState) => {
     this.setState((prevState) => ({
       answers: [...prevState.answers, ''],
+      checked: [...prevState.checked, false]
     }))
   }
 
@@ -26,10 +28,24 @@ class CreateItem extends Component {
     this.setState({ answers })
   };
 
+  handleCheckbox = (index) => {
+    let oldCheck = this.state.checked[index]
+    let checked = [...this.state.checked]
+
+    if (oldCheck === false) {
+      checked.fill(false)
+      checked[index] = true 
+    } else {
+      checked[index] = false
+    }
+    this.setState({ checked, correctAnswerId: index })
+  }
+
   createItem = () => {
     const { question, answers, correctAnswerId } = this.state
     this.props.add()
     CreateItemMutation(question, answers, correctAnswerId, () => console.log(`Mutation completed`))
+    window.location.reload(false);
   }
 
   render() {
@@ -44,21 +60,22 @@ class CreateItem extends Component {
               value={this.state.question}
               onChange={(e) => this.setState({ question: e.target.value })}
             />
-            <input
-              className='input' 
-              type="number" 
-              placeholder="Resposta correta"
-              value={this.state.correctAnswerId}
-              onChange={(e) => this.setState({ correctAnswerId: parseInt(e.target.value) })}
-            /> 
             {this.state.answers.map((ans, index) => (
                 <div className='answer-box'key={index}>
                   <input
                     className='input' 
                     type='text'
-                    placeholder={`Resposta ${index}`}
+                    placeholder={`Resposta ${index+1}`}
                     onChange={(e) => this.handleAnswerChange(e, index)}
                   />
+                  <label className='container'>
+                    <input
+                      type='checkbox'
+                      checked={this.state.checked[index]}
+                      onChange={( ) => this.handleCheckbox(index)}
+                    />
+                    <span className='checkmark'></span>
+                  </label>
                   <button 
                     className='answer-alter'
                     onClick={() => this.removeAnswer(index)}
