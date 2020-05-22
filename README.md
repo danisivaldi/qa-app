@@ -23,7 +23,7 @@ cd client/qa-app
 yarn start
 ```
 
-A aplicação web pode ser acessada pelo endereço http:/localhost:3000
+A aplicação web pode ser acessada pelo endereço *<http:/localhost:3000>*
 
 ## Todo
 
