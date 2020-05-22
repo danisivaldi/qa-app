@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .qa-box {
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
     padding: 20px;
+    word-wrap: break-word;         
+    overflow-wrap: break-word;
+    width: 70%;
 }
 
 .question {
