@@ -70,7 +70,7 @@ class CreateItem extends Component {
             <button className='answer-alter'onClick={(e) => this.addAnswer(e)}>ADICIONAR RESPOSTA</button>
           </div>
           <div>
-            <button className='submit'onClick={() => this.createItem()}>SALVAR</button>
+            <button className='submit' onClick={() => this.createItem()}>SALVAR</button>
           </div>
         </div>
       </>

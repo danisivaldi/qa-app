@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import DeleteItemMutation from '../../mutations/deleteItemMutation'
 import './styles.css'
 
 class Item extends Component {
+
+  deleteItem = () => {
+    const { id } = this.props.item
+    DeleteItemMutation(id, () => console.log(`Mutation completed`))
+  }
+
   render() {
     return (
       <div className="container">
@@ -17,7 +24,7 @@ class Item extends Component {
         </div>
         <div className="options-box">
             <div className="options">EDITAR</div>
-            <div className="options">REMOVER</div>
+            <button className="options" onClick={() => this.deleteItem()}>REMOVER</button>
         </div>
       </div>
     )

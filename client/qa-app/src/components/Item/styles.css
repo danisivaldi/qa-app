@@ -40,6 +40,8 @@
     font-size: 13px;
     opacity: 80%;
     margin: 10px;
+    border: none;
+    background-color: none;
 }
 
 .options:hover {
